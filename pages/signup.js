@@ -38,13 +38,13 @@ const Signup = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <p className={styles.description}>Hey here 👋</p>
+        <p className={styles.description}>Hey there 👋</p>
         <label htmlFor='email'>
           <input
             name='email'
             type='email'
             value={email}
-            placeholder='email'
+            placeholder='Email'
             onChange={(e) => setEmail(e.target.value)}
             className={styles.loginInput}
           />
@@ -55,7 +55,7 @@ const Signup = () => {
             name='password'
             type='password'
             value={password}
-            placeholder='password'
+            placeholder='Password'
             onChange={(e) => setPassword(e.target.value)}
             className={styles.loginInput}
           />

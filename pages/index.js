@@ -11,7 +11,12 @@ function Home() {
     const res = await fetch(args);
     return res.json();
   });
-  if (!data) return <h1>Loading...</h1>;
+  if (!data)
+    return (
+      <div className={styles.container}>
+        <h1 className={styles.description}>Loading...</h1>
+      </div>
+    );
   let loggedIn = false;
   if (data.email) {
     loggedIn = true;
@@ -23,7 +28,6 @@ function Home() {
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
       <h1 className={styles.title}>Automatic Parakeet 🦜</h1>
-
       <h3 className={styles.description}>
         Complete tasks ✅ to level up 🔺 your character!
       </h3>
