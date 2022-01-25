@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React, { useState } from 'react';
 import Router from 'next/router';
 import cookie from 'js-cookie';
@@ -64,6 +65,9 @@ const Login = () => {
         <input type='submit' value='Login' className={styles.submitButton} />
         {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
       </form>
+      <nav className={styles.grid}>
+        <a href='/'>👈 Go back</a>
+      </nav>
     </div>
   );
 };
