@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default async (req, res) => {
-  const token = 'REPLACE_YOUR_TOKEN';
-  const url = 'https://REPLACE_YOUR_ENDPOINT/lrange/todo/0/100?_token=' + token;
+  const token = 'AYvEACQgODQ3NGUyZDMtZjNmMy00OGM3LWI5NzItNDU5ZDhlMmRmYWUyMjBhZjkwMTE5MzI2NDMxY2E2NDIzOTlmNDRjYTYxOTY=';
+  const url = 'https://us1-boss-grouper-35780.upstash.io/lrange/todo/0/100?_token=' + token;
 
   return fetch(url)
     .then((r) => r.json())
