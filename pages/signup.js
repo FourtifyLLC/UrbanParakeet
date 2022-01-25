@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 import cookie from 'js-cookie';
 
+import styles from '../styles/Home.module.css';
+
 const Signup = () => {
   const [signupError, setSignupError] = useState('');
   const [email, setEmail] = useState('');
@@ -33,35 +35,39 @@ const Signup = () => {
       });
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Sign Up</p>
-      <label htmlFor='email'>
-        email
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <p className={styles.description}>Hey here 👋</p>
+        <label htmlFor='email'>
+          <input
+            name='email'
+            type='email'
+            value={email}
+            placeholder='email'
+            onChange={(e) => setEmail(e.target.value)}
+            className={styles.loginInput}
+          />
+        </label>
+
+        <label htmlFor='password'>
+          <input
+            name='password'
+            type='password'
+            value={password}
+            placeholder='password'
+            onChange={(e) => setPassword(e.target.value)}
+            className={styles.loginInput}
+          />
+        </label>
+
         <input
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          name='email'
-          type='email'
+          type='submit'
+          value='Create account'
+          className={styles.submitButton}
         />
-      </label>
-
-      <br />
-
-      <label for='password'>
-        password
-        <input
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          name='password'
-          type='password'
-        />
-      </label>
-
-      <br />
-
-      <input type='submit' value='Submit' />
-      {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
-    </form>
+        {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
+      </form>
+    </div>
   );
 };
 

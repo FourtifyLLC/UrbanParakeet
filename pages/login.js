@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Router from 'next/router';
 import cookie from 'js-cookie';
 
+import styles from '../styles/Home.module.css';
+import { strictEqual } from 'assert';
+
 const Login = () => {
   const [loginError, setLoginError] = useState('');
   const [email, setEmail] = useState('');
@@ -35,23 +38,33 @@ const Login = () => {
       });
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <p>Login</p>
-      <input
-        name='email'
-        type='email'
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        name='password'
-        type='password'
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <input type='submit' value='Submit' />
-      {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
-    </form>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <p className={styles.description}>Welcome back 👋</p>
+        <input
+          name='email'
+          type='email'
+          value={email}
+          placeholder='email'
+          onChange={(e) => setEmail(e.target.value)}
+          className={styles.loginInput}
+        />
+
+        <input
+          name='password'
+          type='password'
+          value={password}
+          placeholder='password'
+          onChange={(e) => setPassword(e.target.value)}
+          className={styles.loginInput}
+        />
+
+        <br />
+
+        <input type='submit' value='Login' className={styles.submitButton} />
+        {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+      </form>
+    </div>
   );
 };
 
