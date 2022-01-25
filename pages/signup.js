@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React, { useState } from 'react';
 import Router from 'next/router';
 import cookie from 'js-cookie';
@@ -67,6 +68,9 @@ const Signup = () => {
         />
         {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
       </form>
+      <nav className={styles.grid}>
+        <a href='/'>👈 Go back</a>
+      </nav>
     </div>
   );
 };
