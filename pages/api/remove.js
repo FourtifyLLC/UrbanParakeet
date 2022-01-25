@@ -5,9 +5,9 @@ export default async (req, res) => {
   }
   let todo = encodeURI(req.query.todo);
 
-  const token = 'REPLACE_YOUR_TOKEN';
+  const token = 'AYvEACQgODQ3NGUyZDMtZjNmMy00OGM3LWI5NzItNDU5ZDhlMmRmYWUyMjBhZjkwMTE5MzI2NDMxY2E2NDIzOTlmNDRjYTYxOTY=';
   const url =
-    'https://REPLACE_YOUR_ENDPOINT/lrem/todo/1/' + todo + '?_token=' + token;
+    'https://us1-boss-grouper-35780.upstash.io/lrem/todo/1/' + todo + '?_token=' + token;
 
   return fetch(url)
     .then((r) => r.json())
