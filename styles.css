@@ -10,5 +10,5 @@ body {
 form label {
   display: flex;
   justify-content: space-between;
-  max-width: 220px;
+  max-width: 240px;
 }
