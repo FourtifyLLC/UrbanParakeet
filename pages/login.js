@@ -4,7 +4,6 @@ import Router from 'next/router';
 import cookie from 'js-cookie';
 
 import styles from '../styles/Home.module.css';
-import { strictEqual } from 'assert';
 
 const Login = () => {
   const [loginError, setLoginError] = useState('');
@@ -46,7 +45,7 @@ const Login = () => {
           name='email'
           type='email'
           value={email}
-          placeholder='email'
+          placeholder='Email'
           onChange={(e) => setEmail(e.target.value)}
           className={styles.loginInput}
         />
@@ -55,7 +54,7 @@ const Login = () => {
           name='password'
           type='password'
           value={password}
-          placeholder='password'
+          placeholder='Password'
           onChange={(e) => setPassword(e.target.value)}
           className={styles.loginInput}
         />

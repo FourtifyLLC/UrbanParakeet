@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
     "assert": "^2.0.0",
     "bcrypt": "^5.0.1",
     "formik": "^2.2.9",
