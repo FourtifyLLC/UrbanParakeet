@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import Character from './character.js'
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -55,6 +56,9 @@ export default function Home() {
       <header className={styles.header}>
         <h1 className={styles.subtitle}>Automatic Parakeet 🦜</h1>
       </header>
+      <div>
+        <Character />
+      </div>
       <main className={styles.main}>
         <div className={styles.grid}>
           <form className={styles.cardForm} onSubmit={addTodo}>
