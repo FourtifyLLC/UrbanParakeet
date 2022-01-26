@@ -65,6 +65,15 @@ function Home() {
           Continue straight to dashboard 🚧
         </a>
       </nav>
+      <ul className={styles.circles}>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 }
