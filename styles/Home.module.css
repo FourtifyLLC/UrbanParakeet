@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  min-height: 70vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
@@ -51,12 +51,10 @@
 }
 
 .header {
-  width: 100%;
   height: 80px;
-  display: flex;
   padding-left: 30px;
-  padding-right: 20px;
-  justify-content: left;
+  display: flex;
+  justify-content: space-between;
   align-items: left;
   font-size: 1.5rem;
   font-weight: bold;
@@ -118,6 +116,7 @@
 .submitButton {
   padding: 1rem;
   margin: 5px;
+  margin-top: 20px;
   text-align: center;
   text-decoration: none;
   color: rgb(199, 199, 199);
@@ -186,6 +185,7 @@
 
 .character {
   margin-top: -30px;
+  margin-left: -2px;
   font-size: 2rem;
 }
 

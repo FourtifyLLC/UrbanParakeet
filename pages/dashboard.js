@@ -9,6 +9,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
+
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -50,6 +51,11 @@ export default function Home() {
   const [todo, setTodo] = useState('');
   const [exp, setExp] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [age, setAge] = useState('');
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
 
   const handleSetTodo = (event) => {
     setTodo(event.target.value);
@@ -130,7 +136,7 @@ export default function Home() {
   return (
     <>
       <header className={styles.header}>
-        <h1 className={styles.subtitle}>🦜</h1>
+        <h1>🦜</h1>
       </header>
       <main className={styles.main}>
         <Card sx={{ display: 'grid' }}>

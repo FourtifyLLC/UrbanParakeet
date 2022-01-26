@@ -38,7 +38,7 @@ const Signup = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <p className={styles.description}>Hey there 👋</p>
+        <p className={styles.description}>Nice to meet you 👋</p>
         <label htmlFor='email'>
           <input
             name='email'
@@ -60,7 +60,7 @@ const Signup = () => {
             className={styles.loginInput}
           />
         </label>
-
+        <br />
         <input
           type='submit'
           value='Create account'

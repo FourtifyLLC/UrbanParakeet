@@ -4,8 +4,6 @@ html,
 body {
   background-color: rgb(23, 23, 23);
   color: rgb(230, 230, 230);
-  padding: 0;
-  margin: 0;
   font-family: 'IBM Plex Mono', monospace;
 }
 
@@ -59,17 +57,17 @@ a:hover {
 }
 
 .MuiCard-root {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #e5f253, #23a6d5, #e4625f, #17d3a7);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 8s ease infinite;
   height: 100vh;
   font-size: 1.5rem;
   position: fixed;
   z-index: 1000;
-  bottom: 20px;
-  right: 20px;
+  bottom: 40px;
+  right: 40px;
   height: 110px;
-  box-shadow: var(--shadow-elevation-low);
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 @keyframes gradient {

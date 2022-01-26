@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
-        <p className={styles.description}>Welcome back 👋</p>
+        <p className={styles.description}>Hi again 👋</p>
         <input
           name='email'
           type='email'
