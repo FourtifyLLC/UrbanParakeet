@@ -7,7 +7,6 @@ import LinearProgress from '@mui/material/LinearProgress';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import Head from 'next/head';
@@ -43,17 +42,12 @@ function LinearProgressWithLabel(props) {
 }
 
 LinearProgressWithLabel.propTypes = {
-  /**
-   * The value of the progress indicator for the determinate and buffer variants.
-   * Value between 0 and 100.
-   */
   value: PropTypes.number.isRequired,
 };
 
 export default function Home() {
   const [data, setData] = useState([]);
   const [todo, setTodo] = useState('');
-
   const [exp, setExp] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -94,16 +88,36 @@ export default function Home() {
   }, []);
 
   function Character() {
-    if (exp <= 20) {
+    if (exp <= 15) {
       return (
         <div className={styles.character}>
           <p>🥚</p>
         </div>
       );
+    } else if (exp <= 30) {
+      return (
+        <div className={styles.character}>
+          <p>🐣</p>
+        </div>
+      );
     } else if (exp <= 50) {
-      return <p>🐣</p>;
+      return (
+        <div className={styles.character}>
+          <p>🦜</p>
+        </div>
+      );
+    } else if (exp <= 95) {
+      return (
+        <div className={styles.character}>
+          <p>🦖</p>
+        </div>
+      );
     } else {
-      return <p>🦜</p>;
+      return (
+        <div className={styles.character}>
+          <p>🐉</p>
+        </div>
+      );
     }
   }
 
@@ -122,17 +136,25 @@ export default function Home() {
         <Card sx={{ display: 'grid' }}>
           <Box>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              {exp <= 20 ? (
+              {exp <= 15 ? (
                 <Typography component='div' variant='body1'>
                   {'Egg'}
                 </Typography>
-              ) : exp <= 50 ? (
+              ) : exp <= 30 ? (
                 <Typography component='div' variant='body1'>
                   {'Chick'}
                 </Typography>
-              ) : (
+              ) : exp <= 50 ? (
                 <Typography component='div' variant='body1'>
                   {'Parakeet'}
+                </Typography>
+              ) : exp <= 95 ? (
+                <Typography component='div' variant='body1'>
+                  {'T-Rex'}
+                </Typography>
+              ) : (
+                <Typography component='div' variant='body1'>
+                  {'Dragon'}
                 </Typography>
               )}
               <LinearProgressWithLabel

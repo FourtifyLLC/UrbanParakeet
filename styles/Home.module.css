@@ -96,9 +96,7 @@
   overflow-wrap: break-word;
   border: 1px solid #eaeaea;
   border-radius: 5px;
-  background-color: #ff0072;
-  z-index: -2;
-  transform: translate(16.5%, 16.5%);
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .cardInput {
@@ -109,13 +107,13 @@
   background-color: rgb(23, 23, 23);
   text-decoration: none;
   overflow-wrap: break-word;
-  border: 1px solid #4f4f4f;
+  border: 1px solid #989898;
   border-radius: 5px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 100%;
   font-size: 1.25rem;
   line-height: 1.5;
-  box-shadow: var(--shadow-elevation-low);
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .loginInput {
@@ -185,7 +183,6 @@
 
 .character {
   margin-top: -30px;
-  margin-left: -5px;
   font-size: 2rem;
 }
 
