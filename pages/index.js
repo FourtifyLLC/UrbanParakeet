@@ -8,20 +8,24 @@ import cookie from 'js-cookie';
 import styles from '../styles/Home.module.css';
 
 function Home() {
-  const { data, revalidate } = useSWR('/api/me', async function (args) {
+  const { data, error, mutate } = useSWR('/api/me', async function (args) {
     const res = await fetch(args);
     return res.json();
   });
+
+  let loggedIn = false;
+
   if (!data)
     return (
       <div className={styles.container}>
         <h1 className={styles.description}>Loading...</h1>
       </div>
     );
-  let loggedIn = false;
+    
   if (data.email) {
     loggedIn = true;
   }
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -37,16 +41,24 @@ function Home() {
       </h3>
       {loggedIn && (
         <>
+        <div className={styles.grid}>
           <p>Welcome {data.email}!</p>
-          <button
+        </div>
+          <nav className={styles.grid}>
+        <a href='/dashboard' className={styles.submitButton}>
+          Continue to dashboard 👉
+        </a>
+      </nav>
+      <button
             onClick={() => {
               cookie.remove('token');
-              revalidate();
+              mutate();
             }}
+            className={styles.smallButton}
           >
             Logout
           </button>
-        </>
+      </>
       )}
       <div className={styles.grid}>
         {!loggedIn && (
@@ -60,11 +72,6 @@ function Home() {
           </>
         )}
       </div>
-      <nav className={styles.grid}>
-        <a href='/dashboard' className={styles.submitButton}>
-          Continue straight to dashboard 🚧
-        </a>
-      </nav>
       <ul className={styles.circles}>
         <li></li>
         <li></li>
