@@ -70,6 +70,24 @@ a:hover {
   box-shadow: var(--shadow-elevation-medium);
 }
 
+.emoji {
+  font-size: 1em;
+  min-width: 1.4em;
+  margin: 0.3em 0.4em;
+  text-align: center;
+}
+
+.emoji::after {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.hearts::after {
+  content: '❤️';
+  animation-name: hearts;
+  animation-duration: 3s;
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -79,5 +97,43 @@ a:hover {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes twoFrames {
+  50% {
+    content: var(--emoji);
+  }
+}
+
+@keyframes threeFrames {
+  33.333% {
+    content: var(--emoji-1);
+  }
+
+  66.666% {
+    content: var(--emoji-2);
+  }
+}
+
+@keyframes hearts {
+  16.666% {
+    content: '🧡';
+  }
+
+  33.333% {
+    content: '💛';
+  }
+
+  50% {
+    content: '💚';
+  }
+
+  66.666% {
+    content: '💙';
+  }
+
+  83.333% {
+    content: '💜';
   }
 }

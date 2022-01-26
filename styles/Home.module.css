@@ -60,6 +60,15 @@
   font-weight: bold;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
+}
+
 .grid {
   display: flex;
   align-items: center;

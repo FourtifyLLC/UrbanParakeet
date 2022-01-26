@@ -72,6 +72,11 @@ function Home() {
           </>
         )}
       </div>
+      <div className={styles.footer}>
+        Made with{' '}
+        <span className='emoji hearts' role='img' aria-label='hearts'></span> in
+        California
+      </div>
       <ul className={styles.circles}>
         <li></li>
         <li></li>

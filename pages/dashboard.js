@@ -16,6 +16,10 @@ import Link from 'next/link';
 
 import styles from '../styles/Home.module.css';
 
+var duration = 15 * 1000;
+var animationEnd = Date.now() + duration;
+var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
 const LightTooltip = styled(({ className, ...props }) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
@@ -51,11 +55,6 @@ export default function Home() {
   const [todo, setTodo] = useState('');
   const [exp, setExp] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [age, setAge] = useState('');
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
 
   const handleSetTodo = (event) => {
     setTodo(event.target.value);
@@ -77,8 +76,8 @@ export default function Home() {
       .then((data) => {
         loadTodos();
       });
-    setExp(exp + 5);
-    setProgress(progress + 5);
+    setExp(exp + 10);
+    setProgress(progress + 10);
   };
 
   const loadTodos = () => {
@@ -184,7 +183,7 @@ export default function Home() {
           </form>
           <div className={styles.grid}>
             {data.map((item) => (
-              <LightTooltip title='+5 EXP' placement='top'>
+              <LightTooltip title='+10 EXP' placement='top'>
                 <a
                   href='#'
                   onClick={() => removeTodo(item)}
