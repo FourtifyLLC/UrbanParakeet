@@ -52,12 +52,10 @@ a:hover {
 
 .MuiTypography-root {
   font-family: 'IBM Plex Mono', monospace;
-  color: white;
 }
 
 .MuiTypography-body1 {
   font-weight: 700;
-  color: white;
 }
 
 .MuiCard-root {
@@ -74,11 +72,11 @@ a:hover {
     hsl(354deg 90% 67%) 89%,
     hsl(0deg 95% 66%) 100%
   );
-  color: white;
   font-size: 1.5rem;
   position: fixed;
   z-index: 1000;
   bottom: 20px;
   right: 20px;
+  height: 280px;
   box-shadow: var(--shadow-elevation-low);
 }
