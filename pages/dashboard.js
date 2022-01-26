@@ -6,10 +6,11 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Character from './character.js'
 
+
 export default function Home() {
   const [data, setData] = useState([]);
-  const [todo, setTodo] = useState('');
-  const [category, setCategory] = useState('');
+  const [todo, setTodo] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSetTodo = (event) => {
     setTodo(event.target.value);
@@ -17,7 +18,7 @@ export default function Home() {
 
   const addTodo = (event) => {
     event.preventDefault();
-    fetch('/api/add?todo=' + todo)
+    fetch("/api/add?todo=" + todo)
       .then((res) => res.json())
       .then((data) => {
         loadTodos();
@@ -26,7 +27,7 @@ export default function Home() {
   };
 
   const removeTodo = (rtodo) => {
-    fetch('/api/remove?todo=' + rtodo)
+    fetch("/api/remove?todo=" + rtodo)
       .then((res) => res.json())
       .then((data) => {
         loadTodos();
@@ -34,7 +35,7 @@ export default function Home() {
   };
 
   const loadTodos = () => {
-    fetch('/api/list')
+    fetch("/api/list")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -64,10 +65,10 @@ export default function Home() {
           <form className={styles.cardForm} onSubmit={addTodo}>
             <input
               className={styles.cardInput}
-              type='text'
-              name='todo'
+              type="text"
+              name="todo"
               onChange={handleSetTodo}
-              placeholder='Add a new task'
+              placeholder="Add a new task"
             />
           </form>
           <div className={styles.grid}>
@@ -77,7 +78,7 @@ export default function Home() {
             </h3>
             {data.map((item) => (
               <a
-                href='#'
+                href="#"
                 onClick={() => removeTodo(item)}
                 className={styles.card}
               >
@@ -85,6 +86,7 @@ export default function Home() {
               </a>
             ))}
           </div>
+          <a href="/">✌ Logout</a>
         </div>
       </main>
     </>
