@@ -49,7 +49,6 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           className={styles.loginInput}
         />
-
         <input
           name='password'
           type='password'
@@ -58,9 +57,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           className={styles.loginInput}
         />
-
         <br />
-
         <input type='submit' value='Login' className={styles.submitButton} />
         {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
       </form>
