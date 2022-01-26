@@ -9,7 +9,6 @@ const Signup = () => {
   const [signupError, setSignupError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [passwordConfirmation, setPasswordConfirmation] = useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -35,6 +34,7 @@ const Signup = () => {
         }
       });
   }
+
   return (
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
@@ -66,7 +66,9 @@ const Signup = () => {
           value='Create account'
           className={styles.submitButton}
         />
-        {signupError && <p style={{ color: 'red' }}>{signupError}</p>}
+        {signupError && (
+          <p style={{ textAlign: 'center', color: 'red' }}>{signupError}</p>
+        )}
       </form>
       <nav className={styles.grid}>
         <a href='/'>👈 Go back</a>

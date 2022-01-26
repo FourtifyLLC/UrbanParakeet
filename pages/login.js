@@ -59,7 +59,9 @@ const Login = () => {
         />
         <br />
         <input type='submit' value='Login' className={styles.submitButton} />
-        {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
+        {loginError && (
+          <p style={{ textAlign: 'center', color: 'red' }}>{loginError}</p>
+        )}
       </form>
       <nav className={styles.grid}>
         <a href='/'>👈 Go back</a>

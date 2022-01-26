@@ -6,7 +6,8 @@ const jwt = require('jsonwebtoken');
 const jwtSecret = 'SUPERSECRETE20220';
 
 const saltRounds = 10;
-const url = 'mongodb+srv://codesmith:codesmith@cluster0.uo0jn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const url =
+  'mongodb+srv://codesmith:codesmith@cluster0.uo0jn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const dbName = 'user-db';
 
 const client = new MongoClient(url, {
@@ -43,7 +44,7 @@ export default (req, res) => {
 
       findUser(db, email, function (err, user) {
         if (err) {
-          res.status(500).json({ error: true, message: 'Error finding User' });
+          res.status(500).json({ error: true, message: 'Error finding user' });
           return;
         }
         if (!user) {
@@ -52,7 +53,7 @@ export default (req, res) => {
         } else {
           authUser(db, email, password, user.password, function (err, match) {
             if (err) {
-              res.status(500).json({ error: true, message: 'Auth Failed' });
+              res.status(500).json({ error: true, message: 'Auth failed' });
             }
             if (match) {
               const token = jwt.sign(
@@ -65,7 +66,7 @@ export default (req, res) => {
               res.status(200).json({ token });
               return;
             } else {
-              res.status(401).json({ error: true, message: 'Auth Failed' });
+              res.status(401).json({ error: true, message: 'Auth failed' });
               return;
             }
           });
