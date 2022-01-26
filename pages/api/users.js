@@ -64,8 +64,8 @@ export default (req, res) => {
         if (!user) {
           // proceed to Create
           createUser(db, email, password, function (creationResult) {
-            if (creationResult.ops.length === 1) {
-              const user = creationResult.ops[0];
+            if (creationResult) {
+              const user = creationResult.insertedId;
               const token = jwt.sign(
                 { userId: user.userId, email: user.email },
                 jwtSecret,
