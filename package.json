@@ -1,5 +1,5 @@
 {
-  "name": "automatic-memory",
+  "name": "urban-parakeet",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.3",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.3.1",
     "assert": "^2.0.0",
     "bcrypt": "^5.0.1",
     "formik": "^2.2.9",
@@ -17,7 +19,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.3.1",
     "next": "12.0.8",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
+    "react-awesome-button": "^6.5.1",
     "react-dom": "17.0.2",
     "react-native-just-timeline": "^0.0.2",
     "react-svg": "^14.1.9",

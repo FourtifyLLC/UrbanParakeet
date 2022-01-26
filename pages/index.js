@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
 import useSWR from 'swr';
@@ -24,10 +25,13 @@ function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Automatic Parakeet</title>
+        <title>Urban Parakeet</title>
         <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       </Head>
-      <h1 className={styles.title}>Automatic Parakeet 🦜</h1>
+      <div className={styles.grid}>
+        <h1 className={styles.title}>Urban Parakeet</h1>
+        <span className={styles.parakeet}>🦜</span>
+      </div>
       <h3 className={styles.description}>
         Complete tasks ✅ to level up 🔺 your character!
       </h3>
@@ -56,6 +60,11 @@ function Home() {
           </>
         )}
       </div>
+      <nav className={styles.grid}>
+        <a href='/dashboard' className={styles.submitButton}>
+          Continue straight to dashboard 🚧
+        </a>
+      </nav>
     </div>
   );
 }
